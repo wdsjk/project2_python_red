@@ -21,6 +21,12 @@ def get_weather_data(latitude, longitude, api_key):
     return data
 
 
+def check_weather(temperature, wind_speed, precipitation_probability, humidity):
+    if temperature < -5 or temperature > 35 or wind_speed > 50 or precipitation_probability > 70 or humidity > 70:
+        return "Плохая погода"
+    return "Хорошая погода"
+
+
 def main():
     pprint(get_weather_data(55.751244, 37.618423, API_KEY))
 
